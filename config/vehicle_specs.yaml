@@ -1,0 +1,78 @@
+# SOUTH AFRICAN VEHICLE PHYSICS & EMISSION CONFIG (Thesis V13)
+# Source: Thesis Chapter 3, Tables 3.5, 3.6, 3.7
+
+settings:
+  region_density: 1.225   # kg/m3 (Coastal/Cape Town Air Density)
+  road_friction: 0.020    # Cr (Rolling Resistance for Asphalt/Chip Seal)
+
+# CLASS MAPPING (Must match YOLO Model IDs 0-4)
+classes:
+  0:
+    name: "Passenger Car"
+    short_name: "PC"
+    color: [255, 100, 0] # Blue (BGR)
+    physics:
+      mass_kg: 1400.0     # Avg Sedan Mass
+      drag_coef: 0.32
+      frontal_area: 2.2
+    emissions:
+      fuel_type: "Petrol"
+      bsfc: 300.0         # g/kWh (Euro 2 NA)
+      co_limit: 2.2       # g/km
+      nox_limit: 0.5      # g/km
+
+  1:
+    name: "Light Comm. Vehicle"
+    short_name: "LCV"
+    color: [0, 165, 255] # Orange
+    physics:
+      mass_kg: 1900.0     # Utility Bakkie
+      drag_coef: 0.40
+      frontal_area: 2.8
+    emissions:
+      fuel_type: "Diesel"
+      bsfc: 250.0         # g/kWh (Euro 2 Turbo Diesel)
+      co_limit: 1.0
+      nox_limit: 0.7
+
+  2:
+    name: "Minibus Taxi"
+    short_name: "MBT"
+    color: [0, 255, 0]   # Green
+    physics:
+      mass_kg: 3220.0     # FULLY LADEN (Thesis Requirement)
+      drag_coef: 0.45
+      frontal_area: 3.2
+    emissions:
+      fuel_type: "Petrol"
+      bsfc: 300.0         # Toyota 2.7L VVT-i
+      co_limit: 2.2
+      nox_limit: 0.5
+
+  3:
+    name: "Heavy Vehicle"
+    short_name: "HV"
+    color: [0, 0, 255]   # Red
+    physics:
+      mass_kg: 15000.0    # Rigid Truck/Bus Avg
+      drag_coef: 0.70
+      frontal_area: 8.0
+    emissions:
+      fuel_type: "Diesel"
+      bsfc: 250.0
+      co_limit: 4.0
+      nox_limit: 7.0
+
+  4:
+    name: "SUV"
+    short_name: "SUV"
+    color: [255, 255, 0] # Cyan
+    physics:
+      mass_kg: 1800.0
+      drag_coef: 0.36
+      frontal_area: 2.6
+    emissions:
+      fuel_type: "Petrol"
+      bsfc: 300.0
+      co_limit: 2.2
+      nox_limit: 0.5
