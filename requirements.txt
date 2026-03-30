@@ -1,0 +1,9 @@
+opencv-python-headless
+numpy
+pandas
+pyyaml
+ultralytics
+torch
+customtkinter
+Pillow
+albumentations
